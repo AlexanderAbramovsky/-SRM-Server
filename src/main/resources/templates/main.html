@@ -1,0 +1,235 @@
+<!doctype html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Menu</title>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			
+			<!-- Боковое меню -->
+
+			<div id="sidebar" class="col-2 position-fixed bg-secondary" style="height: 100vh">
+
+				<!-- Информация о акаунте -->
+				<div class="text-center" style="height: 200px; margin-bottom: 20px; margin-top: 20px;">
+					<img src="https://sun9-53.userapi.com/c841030/v841030216/7e48e/G22Eb0ZCsZ8.jpg" class="img-thumbnail" style="height: 150px; width: 150px">
+					<form th:action="@{/logout}" method="post">
+						<button type="submit" class="btn btn-light" style="margin: 10px">выход</button>
+					</form>
+				</div>
+
+				<!-- Кнопки бокового меню -->
+				<nav class="nav flex-column" >
+					<button  class="btn btn-light" style="margin: 10px">Расписание</button>
+					<button id="sidebar_menu_services"  class="btn btn-light" style="margin: 10px">Услуги</button>
+					<button  class="btn btn-light" style="margin: 10px">Клиентская база</button>
+					<button id="sidebar_menu_employees" class="btn btn-light" style="margin: 10px">Сотрудники</button>
+				</nav>
+			</div>
+
+			<!-- Блок основного контента -->
+			<div class="col-10 offset-2">
+
+				<!-- Блок Услуг -->
+				<div id="block_services">
+
+					<!-- Блок Кнопок -->
+					<nav class="navbar" style="margin-top: 20px; margin-bottom: 20px;">
+
+						<form class="form-inline">
+    						<button type="button" class="btn btn-success mr-sm-2">Добавить</button>
+					 		<button type="button" class="btn btn-primary mr-sm-2">Изменить</button>
+					 		<button type="button" class="btn  btn-danger mr-sm-2">Удалить</button>
+  						</form>
+
+					  	<form class="form-inline">
+					    	<input class="form-control mr-sm-2" type="search" 
+					    	placeholder="Поиск...">
+					    	<button type="button" class="btn  btn-outline-success">Найти</button>
+					  	</form>
+					</nav>
+
+					<!-- Блок Таблицы -->
+
+					<table class="table table-striped">
+					 	<thead>
+
+					 		<tr>
+					 			<th class="text-center table-info" colspan="5">Абонементы</th>
+					 		</tr>
+
+					 		<tr>
+					 			<th>ID</th>
+					 			<th>Тип</th>
+					 			<th>Кол-во Занятий / Продолжительность</th>
+					 			<th>Стоимость</th>
+					 		</tr>
+					 	</thead>
+
+					 	<tr>
+					 		<th>1</th>
+					 		<th>
+					 			Стандартный: <br>
+					 			- занятие 30 мин; <br>
+					 			- массаж 1 раз в неделю;
+					 		</th>
+					 		<th>12 занятий / 1 месяц</th>
+					 		<th>700р</th>
+					 	</tr>
+
+					 	<tr>
+					 		<th>2</th>
+					 		<th>
+					 			ВИП: <br>
+					 			- занятие 30-60 мин; <br>
+					 			- массаж 2 раз в неделю;
+					 		</th>
+					 		<th>12 занятий / 1 месяц</th>
+					 		<th>1000р</th>
+					 	</tr>
+
+					 	<tr>
+					 		<th>3</th>
+					 		<th>
+					 			Семейный: <br>
+					 			- занятие 30 мин; <br>
+					 			<p class="bg-danger">(Условие приходить до 16:00)</p>
+					 		</th>
+					 		<th>12 занятий / 1 месяц</th>
+					 		<th>500р</th>
+					 	</tr>	
+
+					 	<tr>
+					 		<th>4</th>
+					 		<th>
+					 			Разовое занятие: <br>
+					 			- занятие 30 мин; <br>
+					 		</th>
+					 		<th>1 занятие / 1 день</th>
+					 		<th>150р</th>
+					 	</tr>	
+
+					 </table>
+
+					 <table class="table table-striped">
+					 	<thead>
+					 		<tr>
+					 			<th class="text-center table-info" colspan="4">Товары</th>
+					 		</tr>
+
+					 		<tr>
+					 			<th>ID</th>
+					 			<th>Название</th>
+					 			<th>Стоимость</th>
+					 		</tr>
+					 	</thead>
+
+					 	<tr>
+					 		<th>5</th>
+					 		<th>Купальная шапочка (Для девочки)</th>
+					 		<th>450р</th>
+					 	</tr>
+
+					 	<tr>
+					 		<th>6</th>
+					 		<th>
+					 			Купальная шапочка (Для мальчика)<br>
+					 			Размеры - S, M
+							</th>
+					 		<th>450р</th>
+					 	</tr>
+
+					 	<tr>
+					 		<th>7</th>
+					 		<th>Нарукавники резиновые</th>
+					 		<th>500р</th>
+					 	</tr>
+
+					 </table>
+
+				</div>
+
+				<!-- Блок Сотрудников -->
+				<div id="block_employees">
+
+					<!-- Блок Кнопок -->
+					<nav class="navbar" style="margin-top: 20px; margin-bottom: 20px;">
+
+						<form class="form-inline">
+    						<button type="button" class="btn btn-success mr-sm-2">Добавить</button>
+					 		<button type="button" class="btn btn-primary mr-sm-2">Изменить</button>
+					 		<button type="button" class="btn  btn-danger mr-sm-2">Удалить</button>
+  						</form>
+
+					  	<form class="form-inline">
+					    	<input class="form-control mr-sm-2" type="search" 
+					    	placeholder="Поиск...">
+					    	<button type="button" class="btn  btn-outline-success">Найти</button>
+					  	</form>
+					</nav>
+
+					<!-- Блок Таблицы -->
+
+					<table id="table_employees" class="table table-striped">
+					 	<thead>
+					 		<tr>
+					 			<th>ID</th>
+					 			<th>ФИО</th>
+					 			<th>Телефон</th>
+					 			<th>Должность</th>
+					 		</tr>
+					 	</thead>
+
+					 	<!--
+
+					 	<tr>
+					 		<th>1</th>
+					 		<th>Абрамовский Александр Владимирович</th>
+					 		<th>+79237795552</th>
+					 		<th>Директор</th>
+					 	</tr>
+
+					 	<tr>
+					 		<th>4</th>
+					 		<th>Абрамовский Александр Владимирович</th>
+					 		<th>+79237795552</th>
+					 		<th>Директор</th>
+					 	</tr>
+
+					 	<tr>
+					 		<th>5</th>
+					 		<th>Абрамовский Александр Владимирович</th>
+					 		<th>+79237795552</th>
+					 		<th>Директор</th>
+					 	</tr>
+						-->
+					 </table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/js/sidebar.js"></script>
+    <script type="text/javascript" src="/js/employees.js"></script>
+  </body>
+</html>
